@@ -1,0 +1,64 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@atlaskit/css-reset": "^6.3.13",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^1.4.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
+    "history": "^4.10.1",
+    "modali": "^1.0.1",
+    "moment": "^2.24.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "styled-react-modal": "^2.0.1",
+    "uuid": "^7.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "secure": false,
+  "devDependencies": {
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "process": "^0.11.10",
+    "styled-components": "^5.3.11",
+    "styled-icons": "^10.47.0"
+  },
+  "browser": {
+    "crypto": false
+  }
+}

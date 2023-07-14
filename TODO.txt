@@ -1,0 +1,4 @@
+	// check for existing collection
+	// if no collection create collection with title
+
+process.env for front end
