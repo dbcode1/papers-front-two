@@ -19,7 +19,7 @@ import setAuthToken from "../utils/setAuthToken";
 // Load User
 export const loadUser = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API}/auth`);
+    const res = await axios.get("https://papers-back-382b4d134cec.herokuapp.com/auth");
 
     dispatch({
       type: USER_LOADED,
@@ -82,7 +82,7 @@ export const login = (email, password) => async (dispatch) => {
     const body = JSON.stringify({ email, password });
 
     const res = await axios.post(
-      `${process.env.REACT_APP_API}/auth/login`,
+      "https://papers-back-382b4d134cec.herokuapp.com/auth/login",
       body,
       config
     );
@@ -114,7 +114,8 @@ export const deleteUser = () => async (dispatch) => {
     const body = store.getState().auth.token;
     window.confirm("Are you sure you want to delete your account");
     localStorage.clear();
-    await axios.delete(`${process.env.REACT_APP_API}/user`, body);
+
+    await axios.delete("https://papers-back-382b4d134cec.herokuapp.com/user", body);
   } catch (err) {
     alert(err.response.data.errors[0].msg);
   }

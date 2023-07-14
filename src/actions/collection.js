@@ -13,7 +13,7 @@ const axios = require('axios')
 // update 
 export const getCollections = () => async (dispatch, req, res) => {
 	try {
-		const res = await axios.get(`${process.env.REACT_APP_API}/container`);
+		const res = await axios.get("https://papers-back-382b4d134cec.herokuapp.com/container");
 		console.log("get collections", res)
 		dispatch({
 			type: GET_COLLECTION_SUCCESS,
@@ -37,7 +37,7 @@ export const addCollection = (title) => async (dispatch, res, req) => {
 	try {
 		const res = await axios({
 			method: 'post',
-			url: `${process.env.REACT_APP_API}/container`,
+			url: "https://papers-back-382b4d134cec.herokuapp.com/container",
 			data: {
 				title: title
 			},
@@ -71,7 +71,7 @@ export const deleteCollection = (title) => async (dispatch, res, req) => {
 	try{
 		const res = await axios({
 			method: 'delete',
-			url: `${process.env.REACT_APP_API}/container`,
+			url: "https://papers-back-382b4d134cec.herokuapp.com/container",
 			data: {
 				title : title
 			}

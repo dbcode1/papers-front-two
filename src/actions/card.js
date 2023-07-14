@@ -16,7 +16,7 @@ import {
 export const getCards = (searchTerm) => async (dispatch, res, req) => {
   console.log("GET CARDS");
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API}/search-news`, {
+    const res = await axios.get("https://papers-back-382b4d134cec.herokuapp.com/search-news", {
       params: {
         q: searchTerm,
       },
@@ -49,7 +49,7 @@ export const addCard =
     try {
       const res = await axios({
         method: "post",
-        url: `${process.env.REACT_APP_API}/card`,
+        url: "https://papers-back-382b4d134cec.herokuapp.com/card",
         data: {
           title,
           img,
@@ -72,7 +72,7 @@ export const addCard =
 
 export const retrieveCards = (title) => async (dispatch, res, req) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API}/card`, {
+    const res = await axios.get("https://papers-back-382b4d134cec.herokuapp.com/card", {
       params: {
         q: title,
       },
@@ -102,7 +102,7 @@ export const deleteCards = (title) => async (dispatch, res, req) => {
   try {
     await axios({
       method: "delete",
-      url: `${process.env.REACT_APP_API}/card`,
+      url: "https://papers-back-382b4d134cec.herokuapp.com/card",
       data: {
         title: title,
       },
