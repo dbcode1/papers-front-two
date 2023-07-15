@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import GlobalLink from "../../styled/GlobalLink";
 import styled from "styled-components";
-// import { Archive } from "@styled-icons/heroicons-outline/Archive"
+import { Archive } from "@styled-icons/bootstrap/Archive";
 import { NewsPaper } from "@styled-icons/zondicons/NewsPaper";
 import { Folder } from "@styled-icons/material-outlined/Folder";
 import { RightArrowAlt } from "@styled-icons/boxicons-regular/RightArrowAlt";
@@ -49,29 +49,27 @@ const StyledFolder = styled(Folder)`
 	}
 `;
 
-// const StyledArchive = styled(Archive)`
-// 	width: 11vw;
-// 	@media(min-width: 600px){
-// 		width: 9.5vw
-// 	}
-// 	@media(min-width: 700px) {
-// 		width: 10.25vw;
-// 		margin-right: -.75vw;
-// 	}
-// 	@media(min-width: 800px) {
-// 		width: 8.75vw;
-// 		margin-right: -.75vw;
-// 	}
-// 	@media(min-width: 1100px){
-// 		width: 7.5vw;
-// 	}
-// 	@media(min-width: 1200px) {
-// 		width: 7vw;
-// 	}
-// 		@media(min-width: 1300px) {
-
-// 	}
-// `;
+const StyledArchive = styled(Archive)`
+  width: 8.5vw;
+  @media (min-width: 600px) {
+    width: 8.7vw;
+  }
+  @media (min-width: 700px) {
+    margin-right: -0.75vw;
+  }
+  @media (min-width: 800px) {
+    width: 8vw;
+    margin-right: -0.75vw;
+  }
+  @media (min-width: 1100px) {
+    width: 7.25vw;
+  }
+  @media (min-width: 1200px) {
+    width: 7vw;
+  }
+  @media (min-width: 1300px) {
+  }
+`;
 
 const StyledNewsPaper = styled(NewsPaper)`
   width: 8vw;
@@ -141,7 +139,7 @@ const Landing = ({ isAuthenticated }) => {
           collections for future reading.
         </p>
         <Icons>
-          {/* <StyledArchive /> */}
+          <StyledArchive />
           <StyledArrow />
           <StyledNewsPaper />
           <StyledArrow />

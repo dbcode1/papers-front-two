@@ -19,7 +19,9 @@ import setAuthToken from "../utils/setAuthToken";
 // Load User
 export const loadUser = () => async (dispatch) => {
   try {
-    const res = await axios.get("https://papers-back-382b4d134cec.herokuapp.com/auth");
+    const res = await axios.get(
+      "https://papers-back-382b4d134cec.herokuapp.com/auth"
+    );
 
     dispatch({
       type: USER_LOADED,
@@ -96,7 +98,7 @@ export const login = (email, password) => async (dispatch) => {
   } catch (err) {
     alert(
       // err.response.data.errors[0].param + ": " + err.response.data.errors[0].msg
-      console.log(err)
+      err
     );
   }
 };
@@ -115,7 +117,10 @@ export const deleteUser = () => async (dispatch) => {
     window.confirm("Are you sure you want to delete your account");
     localStorage.clear();
 
-    await axios.delete("https://papers-back-382b4d134cec.herokuapp.com/user", body);
+    await axios.delete(
+      "https://papers-back-382b4d134cec.herokuapp.com/user",
+      body
+    );
   } catch (err) {
     alert(err.response.data.errors[0].msg);
   }

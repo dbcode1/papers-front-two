@@ -57,19 +57,20 @@ const SearchInput = styled("input")`
   width: 50vw;
   text-align: center;
   input {
-    font-size: 100%;
+    font-size: 1em;
     letter-spacing: 1.5px;
     background-color: #fff;
     @media (min-width: );
   }
   border: none;
-    height: 5em;
-    font-size: 100%;
-    width: 100%;
-    text-align: center;
-    color: grey;
-  	&:focus {
-      outline: none;
+  height: 4.4em;
+  font-size: 1.25em;
+  width: 100%;
+  text-align: center;
+  color: grey;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const SearchButton = styled(Button)`

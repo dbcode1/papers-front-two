@@ -53,16 +53,17 @@ const Wrapper = styled.div`
     font-size: 1.25em;
   }
 `;
-const CollectionInput = styled(Input)`
-  border: grey;
-  width: 50vw;
+const CollectionInput = styled("input")`
+  border: none;
+  width: 80vw;
   text-align: center;
-  input {
-    font-size: 100%;
-    background-color: #fff;
-    @media (min-width: 750px) {
-      font-size: 1.25em;
-    }
+  font-size: 1.25em;
+  background-color: #fff;
+  @media (min-width: 750px) {
+    font-size: 1.25em;
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
@@ -189,25 +190,42 @@ const Collection = (props) => {
   };
   console.log(props.show);
   return (
+    // <Nav>
+    //     <form className="form-input">
+    //       <SearchInput
+    //         type="text"
+    //         name="searchTerm"
+    //         value={searchTerm}
+    //         placeholder="Enter Term"
+    //         required
+    //         onChange={(e) => onChange(e)}
+    //         minLength="3"
+    //       ></SearchInput>
+
+    //       <li className="form-button">
+    //         <SearchButton onClick={(e) => onSubmit(e)}>Search</SearchButton>{" "}
+    //       </li>
+    //     </form>
+    //   </Nav>
+
     <Wrapper>
       <Nav>
-        <li className="form-input">
-          <CollectionInput>
-            <input
-              type="title"
-              name="title"
-              placeholder="Collection Title"
-              required
-              onChange={(e) => onChange(e)}
-              minLength="6"
-            />
-          </CollectionInput>
-        </li>
-        <li className="form-button">
-          <Button onClick={onSubmit}>
-            <AddButton />
-          </Button>
-        </li>
+        <form className="form-input">
+          <CollectionInput
+            type="title"
+            name="title"
+            placeholder="Collection Title"
+            required
+            onChange={(e) => onChange(e)}
+            minLength="6"
+          ></CollectionInput>
+
+          <li className="form-button">
+            <Button onClick={onSubmit}>
+              <AddButton />
+            </Button>
+          </li>
+        </form>
       </Nav>
 
       <div className="collection-wrapper">
