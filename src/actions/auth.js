@@ -19,9 +19,7 @@ import setAuthToken from "../utils/setAuthToken";
 // Load User
 export const loadUser = () => async (dispatch) => {
   try {
-    const res = await axios.get(
-      "https://papers-back-382b4d134cec.herokuapp.com/auth"
-    );
+    const res = await axios.get(`${process.env.REACT_APP_API}/auth`);
 
     dispatch({
       type: USER_LOADED,
@@ -60,6 +58,7 @@ export const register =
       });
       dispatch(loadUser());
     } catch (err) {
+      console.log("register error");
       alert(
         err.response.data.errors[0].param +
           ": " +
@@ -84,7 +83,7 @@ export const login = (email, password) => async (dispatch) => {
     const body = JSON.stringify({ email, password });
 
     const res = await axios.post(
-      "https://papers-back-382b4d134cec.herokuapp.com/auth/login",
+      `${process.env.REACT_APP_API}/auth/login`,
       body,
       config
     );
@@ -96,10 +95,19 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch(loadUser());
   } catch (err) {
-    alert(
-      // err.response.data.errors[0].param + ": " + err.response.data.errors[0].msg
-      err
-    );
+    dispatch({
+      type: LOGIN_FAIL,
+      payload: err.message,
+    });
+    if (err.response.data.errors[0].param) {
+      alert(
+        err.response.data.errors[0].param +
+          ": " +
+          err.response.data.errors[0].msg
+      );
+    } else {
+      alert(err.response.data.errors[0].msg);
+    }
   }
 };
 
@@ -116,11 +124,7 @@ export const deleteUser = () => async (dispatch) => {
     const body = store.getState().auth.token;
     window.confirm("Are you sure you want to delete your account");
     localStorage.clear();
-
-    await axios.delete(
-      "https://papers-back-382b4d134cec.herokuapp.com/user",
-      body
-    );
+    await axios.delete(`${process.env.REACT_APP_API}/user`, body);
   } catch (err) {
     alert(err.response.data.errors[0].msg);
   }
